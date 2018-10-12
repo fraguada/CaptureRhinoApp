@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CaptureRhinoApp.cs" />
     <Compile Include="CaptureRhinoAppCommand.cs" />
     <Compile Include="CaptureRhinoAppPlugIn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
