@@ -41,7 +41,12 @@ namespace CaptureRhinoApp
         public static Bitmap CaptureRhinoWindow()
         {
             // This still seems to capture whatever is in the foreground
-            return CaptureWindow(RhinoApp.MainWindowHandle());
+            // Needed to add a IntPtr.Zero check for times when Rhino is opening a new file or doing something 
+            // where it can't return the MainWindow.
+            if (RhinoApp.MainWindowHandle() != IntPtr.Zero)
+                return CaptureWindow(RhinoApp.MainWindowHandle());
+            else
+                return null;
         }
 
         public static Bitmap CaptureWindow(IntPtr handle)
